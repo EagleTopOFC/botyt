@@ -1,0 +1,42 @@
+name: Selenium
+
+on:
+
+  push:
+
+    branches:
+
+      - master
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout del repositorio
+
+      uses: actions/checkout@v2
+
+    - name: Configurar Python
+
+      uses: actions/setup-python@v2
+
+      with:
+
+        python-version: '3.x'  # Reemplaza '3.x' con la versión de Python que desees
+
+    - name: Instalar dependencias
+
+      run: |
+
+        pip install selenium
+
+    - name: Ejecutar script
+
+      run: |
+
+        python bot_yt.py
+
